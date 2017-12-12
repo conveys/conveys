@@ -1,0 +1,198 @@
+// bower:scss
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+
+
+//68.79707136 == 69 / 4.25rem
+//47.775744 == 48
+//33.1776 == 33 //2.0625
+//23.04 == 23 / 1.4375rem
+
+h1 {
+  font-size: 2.0625rem;
+  margin-bottom: 1.875rem;
+  padding-bottom: 0;
+  font-weight: 800;
+}
+
+.lead {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+
+//Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  
+  h1 {
+    font-size: 4.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.4375rem;
+  }
+
+}
+
+
+
+$blue: #1544c0;
+$gray: #Eaecee;
+$white: #ffffff;
+
+
+body, html {
+  height: 100%;
+  line-height: 1.5rem;
+  margin: 0;
+  background-color: $gray;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 10000;
+  transition: background-color 300ms ease-in;
+
+  //theme
+  background-color: rgba($blue, .5);
+  border-bottom: 2px solid rgba($blue, .5);
+
+  .brand {   
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-left: 2.5rem;
+  } //brand
+
+  /* Toggle button */
+  .navbar-toggle {
+    position: relative;
+    top: 2rem;
+    margin-right: 2.5rem;
+    width: 32px;
+    float: right;
+    cursor: pointer;
+
+    > .icon-bar {
+      display: block;
+      margin: 0 0 6px 0;
+      width: 100%;
+      height: 2px;
+      transition: transform 0.3s, opacity 0.1s;
+      //theme
+      background: white;
+
+      &:last-child { margin-bottom: 0; }
+
+    } //.icon-bar
+
+    &.active {
+      margin-right: -.625rem;
+      width: 34px; 
+
+      .icon-bar:first-child { transform: rotate(45deg) translateY(12px); }
+      .icon-bar:last-child { transform: rotate(-45deg) translateY(-12px); }
+
+    } //.active
+
+  } //.navbar-toggle
+
+  &.active { 
+    background-color: rgba($blue, .9); 
+    border-bottom: 2px solid darken($blue, 5);
+  } //active
+
+} //navbar
+
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  //padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+.hero-image {
+  background-image: url("../images/hero.jpg");
+  background-color: $blue;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  padding-right: 10%;
+  padding-left: 10%;
+  top: 50%;
+  width: 80%;
+  transform: translate(0, -50%);
+  color: white;
+}
+
+//button
+.btn {
+  border: 2px solid white;
+  outline: 0;
+  display: inline-block;
+  padding-top: 1.25rem;
+  padding-right: 4.375rem;
+  padding-bottom: 1.25rem;
+  padding-left: 4.375rem;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus { background-color: darken($blue, 5); }
+
+}
